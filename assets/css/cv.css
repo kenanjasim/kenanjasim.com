@@ -147,6 +147,22 @@ body {
 .hero .hero-social a:hover,
 .hero .hero-social a:focus-visible { color: var(--cv-accent); }
 
+/* Nav has a single "Writing" link: show it inline on phones instead of behind a hamburger */
+@media only screen and (max-width: 768px) {
+  .navigation .menu-button { display: none; }
+  .navigation .container { display: flex; align-items: center; justify-content: space-between; }
+  .navigation .navigation-list {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    max-height: none;
+    width: auto;
+    border: 0 !important;
+    background: none !important;
+  }
+  .navigation .navigation-list .navigation-item a { line-height: inherit; margin: 0; }
+}
+
 @media only screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
