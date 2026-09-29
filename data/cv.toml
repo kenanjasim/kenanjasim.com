@@ -9,6 +9,10 @@ optimisation problems. I'm currently at Aalyria, working on Spacetime, a platfor
 optimises communications networks spanning land, sea, air and space.
 """
 
+# Interests, shown near the end of the CV (kept in line with the About page on kenan.sh).
+# Top-level keys must stay above the first [[table]] below.
+interests = ['Running', 'Football', 'Snooker', 'Photography', 'Music', 'Reading (mostly politics and history)']
+
 # ---------------------------------------------------------------------------------------------
 # Experience (most recent first)
 # ---------------------------------------------------------------------------------------------

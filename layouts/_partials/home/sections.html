@@ -73,6 +73,13 @@
   </section>
   {{ end }}
 
+  {{ with .interests }}
+  <section id="interests" class="cv-section">
+    <h2>Interests</h2>
+    <p class="cv-interests">{{ delimit . ", " }}</p>
+  </section>
+  {{ end }}
+
   <section id="contact" class="cv-section">
     <h2>Contact</h2>
     <ul class="cv-contact">
