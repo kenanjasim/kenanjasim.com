@@ -1,0 +1,11 @@
+{{/* Project override: intro + CV download under the name/avatar block. */}}
+{{ with hugo.Data.cv }}
+<div class="cv-intro">
+  <p>{{ partial "cv/text.html" .intro }}</p>
+  <p class="cv-actions">
+    <a class="cv-button" href="{{ "cv.pdf" | relURL }}">
+      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download CV (PDF)
+    </a>
+  </p>
+</div>
+{{ end }}

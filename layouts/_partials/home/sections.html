@@ -1,0 +1,86 @@
+{{/* Project override: the one-page CV, rendered from data/cv.toml. */}}
+{{ with hugo.Data.cv }}
+<section class="container cv">
+
+  <section id="experience" class="cv-section">
+    <h2>Experience</h2>
+    {{ range .experience }}
+    <article class="cv-entry">
+      <header>
+        <h3>{{ .role }} · {{ with .url }}<a href="{{ . }}" rel="noopener">{{ end }}{{ .company }}{{ if .url }}</a>{{ end }}</h3>
+        <p class="cv-meta">{{ .dates }}{{ with .location }} · {{ . }}{{ end }}</p>
+      </header>
+      {{ with .summary }}<p>{{ partial "cv/text.html" . }}</p>{{ end }}
+      {{ with .highlights }}
+      <ul>
+        {{ range . }}{{ with partial "cv/text.html" . }}<li>{{ . }}</li>{{ end }}{{ end }}
+      </ul>
+      {{ end }}
+    </article>
+    {{ end }}
+  </section>
+
+  <section id="skills" class="cv-section">
+    <h2>Skills</h2>
+    <dl class="cv-skills">
+      {{ range .skills }}
+      <dt>{{ .group }}</dt>
+      <dd>{{ delimit .items ", " }}</dd>
+      {{ end }}
+    </dl>
+  </section>
+
+  <section id="projects" class="cv-section">
+    <h2>Selected projects</h2>
+    {{ range where .projects "hidden" "!=" true }}
+    <article class="cv-entry">
+      <header>
+        <h3><a href="{{ .url }}" rel="noopener">{{ .name }}</a></h3>
+      </header>
+      <p>{{ partial "cv/text.html" .description }}</p>
+      {{ with partial "cv/text.html" .outcome }}<p class="cv-outcome">{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+    <p class="cv-more">More on <a href="https://github.com/kenanjasim" rel="noopener">GitHub</a>.</p>
+  </section>
+
+  <section id="education" class="cv-section">
+    <h2>Education &amp; certifications</h2>
+    {{ range .education }}
+    <article class="cv-entry">
+      <header>
+        <h3>{{ with .url }}<a href="{{ . | relURL }}">{{ end }}{{ .title }}{{ if .url }}</a>{{ end }}</h3>
+        <p class="cv-meta">{{ .place }} · {{ .dates }}</p>
+      </header>
+      {{ with .notes }}<p>{{ partial "cv/text.html" . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </section>
+
+  {{ with .volunteering }}
+  <section id="volunteering" class="cv-section">
+    <h2>Volunteering</h2>
+    {{ range . }}
+    <article class="cv-entry">
+      <header>
+        <h3>{{ .role }} · {{ .place }}</h3>
+        <p class="cv-meta">{{ .dates }}</p>
+      </header>
+      <p>{{ partial "cv/text.html" .summary }}</p>
+    </article>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  <section id="contact" class="cv-section">
+    <h2>Contact</h2>
+    <ul class="cv-contact">
+      <li><i class="fa-solid fa-envelope fa-fw" aria-hidden="true"></i> <a href="mailto:me@kenan.sh">me@kenan.sh</a></li>
+      <li><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i> <a href="https://github.com/kenanjasim" rel="me noopener">github.com/kenanjasim</a></li>
+      <li><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/kenanjasim/" rel="me noopener">linkedin.com/in/kenanjasim</a></li>
+      <li><i class="fa-solid fa-pen-nib fa-fw" aria-hidden="true"></i> Writing at <a href="https://kenan.sh/">kenan.sh</a></li>
+    </ul>
+  </section>
+
+</section>
+{{ end }}

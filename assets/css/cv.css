@@ -1,0 +1,139 @@
+/* One-page CV styling, layered on hugo-coder. 1rem = 10px (theme sets html { font-size: 62.5% }). */
+
+:root {
+  --cv-muted: #616161;
+  --cv-rule: #e0e0e0;
+  --cv-accent: #1565c0;
+  --cv-todo-bg: #fff3cd;
+  --cv-todo-fg: #7a5b00;
+}
+body.colorscheme-dark {
+  --cv-muted: #a0a0a0;
+  --cv-rule: #424242;
+  --cv-accent: #42a5f5;
+  --cv-todo-bg: #4a3b00;
+  --cv-todo-fg: #ffe08a;
+}
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --cv-muted: #a0a0a0;
+    --cv-rule: #424242;
+    --cv-accent: #42a5f5;
+    --cv-todo-bg: #4a3b00;
+    --cv-todo-fg: #ffe08a;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Theme lays .content out as a flex row; stack the about block and CV sections instead */
+.content { flex-direction: column; }
+.content .cv p,
+.content .cv article p {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+.content .cv-entry header { margin: 0; }
+.cv-section { scroll-margin-top: 1.6rem; }
+
+/* Intro under the avatar/name block */
+.cv-intro {
+  max-width: 56rem;
+  margin: 0 0 0 4.8rem;
+}
+.cv-intro p { text-align: left; }
+@media only screen and (max-width: 768px) {
+  .content > section.centered { flex-direction: column; }
+  .cv-intro { margin: 2.4rem auto 0; }
+  .cv-intro p { text-align: center; }
+}
+.cv-actions { margin-top: 2rem; }
+.cv-button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--cv-accent);
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cv-button:hover,
+.cv-button:focus-visible {
+  background: var(--cv-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Sections */
+.cv { max-width: 80rem; }
+.cv-section {
+  padding-top: 3.2rem;
+  margin-top: 3.2rem;
+  border-top: 1px solid var(--cv-rule);
+}
+.cv-section > h2 {
+  margin: 0 0 1.6rem;
+  font-size: 2.4rem;
+}
+.cv-entry { margin-bottom: 2.4rem; }
+.cv-entry header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 1.6rem;
+}
+.cv-entry h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.cv-entry p,
+.cv-entry ul { margin: 0.6rem 0 0; }
+.cv-entry li { margin-bottom: 0.4rem; }
+.cv-meta {
+  margin: 0;
+  color: var(--cv-muted);
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+.cv-outcome { font-style: italic; }
+.cv-more { color: var(--cv-muted); }
+
+.cv-skills {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 2.4rem;
+  margin: 0;
+}
+.cv-skills dt { font-weight: 700; }
+.cv-skills dd { margin: 0; }
+
+.cv-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cv-contact li { margin-bottom: 0.8rem; }
+
+/* Placeholders (only rendered under `hugo server`) */
+.todo {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.4rem;
+  background: var(--cv-todo-bg);
+  color: var(--cv-todo-fg);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .cv-meta { white-space: normal; }
+  .cv-skills { grid-template-columns: 1fr; gap: 0.2rem; }
+  .cv-skills dd { margin-bottom: 1rem; }
+}
+
+@media print {
+  .navigation, .footer, .cv-actions, .float-container { display: none !important; }
+  .cv-section { break-inside: avoid-page; }
+}

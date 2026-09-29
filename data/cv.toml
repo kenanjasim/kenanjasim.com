@@ -1,0 +1,179 @@
+# Content for the one-page CV on the home page (layouts/_partials/home/sections.html).
+# Everything here comes from cv/cv.tex or the old projects page. Anything that starts with
+# "TODO" renders as a highlighted placeholder, so it's obvious on the page until filled in.
+
+# Short intro under the name. Drawn from the PROFILE section of cv/cv.tex.
+intro = """
+Software engineer with a background in electronic engineering (First-class BEng, King's College
+London), specialising in distributed cloud computing, infrastructure tooling and IoT platforms.
+Currently at Aalyria, building Spacetime, a platform that manages communications networks
+spanning land, sea, air and space.
+"""
+
+# ---------------------------------------------------------------------------------------------
+# Experience (most recent first)
+# ---------------------------------------------------------------------------------------------
+
+[[experience]]
+role = 'Software Engineer'
+company = 'Aalyria'
+url = 'https://aalyria.com'
+location = 'London'
+dates = 'Jan 2026 – Present'
+summary = "Developing Spacetime, a platform to manage and optimise complex, highly dynamic communications networks that span land, sea, air and space. Aalyria was spun out of Google's Loom project."
+highlights = [
+  'TODO: 1–3 concrete highlights from your time at Aalyria (what you built, and its impact)',
+]
+
+[[experience]]
+role = 'Senior Software Engineer'
+company = 'Safe Intelligence'
+location = 'London'
+dates = 'Apr 2025 – Dec 2025'
+summary = 'Developed a platform focused on formal verification of machine learning models, with applications in finance and object detection.'
+highlights = [
+  'TODO: 1–3 concrete highlights from Safe Intelligence (what you built, and its impact)',
+]
+
+[[experience]]
+role = 'Senior Software Engineer'
+company = 'Crypto Quantique'
+location = 'London'
+# TODO: confirm dates/title. cv.tex says "Senior Software Engineer, Jun 2022 – Apr 2025"; the
+# 2024 CV page said "Software Engineer Jun 2022 – May 2023, then Senior from May 2023".
+dates = 'Jun 2022 – Apr 2025'
+summary = 'Developed a distributed universal IoT platform focused on secure onboarding and device management.'
+highlights = [
+  'Lead backend engineer on a distributed system across Python (Django) and Go, with MongoDB, deployed on AWS and Azure.',
+  'Led the design, planning and implementation of new services, including writing the features and user stories for them.',
+  'Improved the maintainability, performance and reliability of legacy codebases; led code-quality initiatives such as onboarding projects into SonarQube.',
+  'Designed and implemented functionality involving Embedded Linux, TPMs, MQTT, FOTA updates, HSMs and highly threaded virtual devices.',
+  'Worked across teams to push for better infrastructure, cleaner architecture, and better coding practices and standards.',
+  'Onboarded, trained and mentored members of the team.',
+  'TODO: add a measurable outcome if you have one (scale, reliability, performance, adoption)',
+]
+
+[[experience]]
+role = 'Full-stack Software Engineer'
+company = 'Konica Minolta'
+location = 'London'
+dates = 'Oct 2020 – Jun 2022'
+summary = 'Full-stack engineer on two Innovate UK funded projects focused on cloud and industrial IoT orchestration.'
+highlights = [
+  'Researched and developed a cloud-native architecture for an IoT platform that detects remote devices and connects them to cloud-hosted virtual machines.',
+  'Built a network scanner, backend REST API, frontend GUI and CLI, using Linux networking (VXLAN) and a VPN to detect devices across physical networks.',
+  'Developed remote device detection for an inter-department project providing box defect detection services.',
+]
+
+[[experience]]
+role = 'Hybrid Cloud Developer (Internship)'
+company = 'Konica Minolta'
+location = 'London'
+dates = 'Mar 2020 – Aug 2020'
+summary = 'Researched and prototyped cloud orchestration solutions with the global R&D team, contributing to a successful Innovate UK application.'
+
+[[experience]]
+role = 'Full Stack Developer / Electronic Engineer'
+company = 'SiriusInsight.AI'
+location = 'London'
+dates = 'Mar 2019 – Oct 2019'
+summary = 'Contributed to a maritime detection prototype providing data streams from camera feeds, mobile antennas and radar. The system was deployed to a maritime light vessel as part of an EU Horizon funded proof-of-concept demonstration.'
+
+[[experience]]
+role = 'Teaching Assistant'
+company = "King's College London"
+location = 'London'
+dates = 'Sep 2019 – Dec 2019'
+summary = 'Supported first-year undergraduate labs: supervised workshops on circuit design, construction and experiment tracking, and gave students feedback and troubleshooting help.'
+
+# ---------------------------------------------------------------------------------------------
+# Skills (from "Technical Skills" in cv/cv.tex)
+# ---------------------------------------------------------------------------------------------
+
+[[skills]]
+group = 'Languages'
+items = ['Go', 'Python', 'Bash', 'TypeScript (React)', 'C']
+
+[[skills]]
+group = 'Infrastructure'
+items = ['Kubernetes', 'Docker', 'Terraform', 'Ansible', 'Jenkins', 'Git', 'Linux & networking']
+
+[[skills]]
+group = 'Cloud'
+items = ['AWS', 'Azure', 'OpenStack']
+
+[[skills]]
+group = 'Data'
+items = ['PostgreSQL', 'MariaDB', 'MongoDB', 'etcd']
+
+[[skills]]
+group = 'Spoken'
+items = ['English (native)', 'Arabic (fluent)']
+
+# ---------------------------------------------------------------------------------------------
+# Selected projects (from the old /projects page; repos verified on github.com/kenanjasim)
+# Set hidden = true to keep an entry here without showing it.
+# ---------------------------------------------------------------------------------------------
+
+[[projects]]
+name = 'Geranium'
+url = 'https://github.com/kenanjasim/geranium'
+description = 'An automated, visualised virtual network for generating network data, used to train a decision-tree intrusion detection model.'
+outcome = 'TODO: outcome (e.g. was this your dissertation? model accuracy? link to the paper, since the old files/geranium.pdf was never committed)'
+
+[[projects]]
+name = 'vngen'
+url = 'https://github.com/kenanjasim/vngen'
+description = 'Automated virtual network generation in Go, using QEMU virtualisation with KVM hardware acceleration.'
+outcome = 'TODO: outcome / what it enabled'
+
+[[projects]]
+name = 'Network Scanner'
+url = 'https://github.com/kenanjasim/network-scanner'
+description = 'Python implementations of ARP, ping and connect scanning to detect hosts and open ports, plus OS detection techniques.'
+outcome = 'TODO: outcome / what it enabled'
+
+[[projects]]
+name = 'Glucose Helper'
+url = 'https://github.com/kenanjasim/GlucoseHelper'
+description = 'An Android app to help people with diabetes monitor their blood sugar and keep control of their own data. My first programming project.'
+outcome = 'TODO: outcome (optional)'
+
+[[projects]]
+name = 'AVN'
+url = 'https://github.com/kenanjasim/autovn'
+description = 'Automated Virtual Network: a Python application that launches virtual networks automatically using VirtualBox.'
+hidden = true
+
+[[projects]]
+name = 'vmctl'
+url = 'https://github.com/kenanjasim/vmctl'
+description = 'A Bash script to control KVM virtual machines through virsh, virt-install and cloud-localds.'
+hidden = true
+
+# ---------------------------------------------------------------------------------------------
+# Education & certifications
+# ---------------------------------------------------------------------------------------------
+
+[[education]]
+title = 'BEng Electronic and Information Engineering — First Class (88%)'
+place = "King's College London"
+dates = '2017 – 2020'
+notes = 'John Oriel Prize (top in exam) and Engineering Society Centenary Prize (top in exam after three years).'
+
+[[education]]
+title = 'Certified Kubernetes Administrator (CKA)'
+place = 'Linux Foundation'
+dates = 'Mar 2022 – Mar 2025'
+url = '/cka-certificate.pdf'
+# TODO: this certification expired in Mar 2025. Keep it as-is, renew it, or remove it.
+
+# ---------------------------------------------------------------------------------------------
+# Volunteering
+# ---------------------------------------------------------------------------------------------
+
+[[volunteering]]
+role = 'Refugee Casework Volunteer'
+place = 'British Red Cross'
+dates = 'Jan 2019 – Jan 2021'
+summary = 'Helped asylum seekers and refugees with asylum support, destitution support, general advice and family reunion.'

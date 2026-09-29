@@ -1,12 +1,10 @@
 # CV
 
-This repository contains the LaTeX source code for my CV.
-
-# Usage
-
-To compile the CV, you can use the following command:
+LaTeX source for my CV. CI compiles it with xelatex and publishes it at
+[kenanjasim.com/cv.pdf](https://kenanjasim.com/cv.pdf).
 
 ```bash
-pdflatex cv.tex
+latexmk -xelatex cv.tex
 ```
 
+History imported from the former `kenanjasim/cv` repository.

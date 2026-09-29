@@ -1,0 +1,15 @@
+{{/*
+  Renders a string from data/cv.toml as inline markdown.
+  Strings starting with "TODO" are placeholders: highlighted under `hugo server`,
+  dropped from production builds (with a build warning so they aren't forgotten).
+*/}}
+{{- $s := trim (. | default "") " \n" -}}
+{{- if hasPrefix $s "TODO" -}}
+  {{- if hugo.IsDevelopment -}}
+    <span class="todo">{{ $s }}</span>
+  {{- else -}}
+    {{- warnf "portfolio placeholder not filled in: %s" $s -}}
+  {{- end -}}
+{{- else if $s -}}
+  {{- $s | markdownify -}}
+{{- end -}}
