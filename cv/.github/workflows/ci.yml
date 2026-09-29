@@ -1,0 +1,71 @@
+name: Build and Deploy LaTeX CV
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup LaTeX
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: cv.tex
+        latexmk_use_xelatex: true
+        latexmk_shell_escape: true
+        extra_system_packages: |
+          py3-pygments
+          inkscape
+    
+    - name: Prepare Pages directory
+      run: |
+        mkdir -p pages
+        cp cv.pdf pages/
+        cat > pages/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CV - Redirecting to PDF</title>
+            <meta http-equiv="refresh" content="0; url=cv.pdf">
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <p>If you are not redirected automatically, <a href="cv.pdf">click here to view the CV</a>.</p>
+        </body>
+        </html>
+        EOF
+    
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: pages/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    # Step 5: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
