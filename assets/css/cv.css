@@ -85,7 +85,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 3.6rem;
-  margin-top: 4.8rem;
+  margin-top: 8rem;
 }
 .hero-avatar {
   flex: none;
@@ -143,31 +143,22 @@ body {
   padding: 0;
   font-size: 2rem;
 }
+.hero-writing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
 .hero .hero-social a { color: var(--cv-muted); }
 .hero .hero-social a:hover,
 .hero .hero-social a:focus-visible { color: var(--cv-accent); }
-
-/* Nav has a single "Writing" link: show it inline on phones instead of behind a hamburger */
-@media only screen and (max-width: 768px) {
-  .navigation .menu-button { display: none; }
-  .navigation .container { display: flex; align-items: center; justify-content: space-between; }
-  .navigation .navigation-list {
-    position: static;
-    visibility: visible;
-    opacity: 1;
-    max-height: none;
-    width: auto;
-    border: 0 !important;
-    background: none !important;
-  }
-  .navigation .navigation-list .navigation-item a { line-height: inherit; margin: 0; }
-}
 
 @media only screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
     gap: 2rem;
-    margin-top: 2.4rem;
+    margin-top: 4rem;
   }
   .hero-avatar { width: 11.2rem; height: 11.2rem; }
   .hero-name { font-size: 3.4rem; }
@@ -272,7 +263,7 @@ body {
   li { margin-bottom: 0.2rem; }
   h1, h2, h3 { line-height: 1.2; }
 
-  .navigation, .footer, .float-container, .hero-avatar, .hero-actions,
+  .footer, .float-container, .hero-avatar, .hero-actions,
   #contact, .cv-more, .todo { display: none !important; }
 
   .content { margin: 0 !important; }

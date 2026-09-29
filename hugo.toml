@@ -47,8 +47,3 @@ icon = 'fa-brands fa-linkedin'
 weight = 3
 url = 'https://www.linkedin.com/in/kenanjasim/'
 rel = 'me'
-
-[[menus.main]]
-name = 'Writing'
-url = 'https://kenan.sh/'
-weight = 1
