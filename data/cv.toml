@@ -1,12 +1,12 @@
-# Content for the one-page CV on the home page (layouts/_partials/home/sections.html).
-# Everything here comes from cv/cv.tex or the old projects page. Anything that starts with
+# Content for the one-page CV on the home page (layouts/_partials/home/sections.html), which is
+# also printed to /cv.pdf by scripts/build-cv-pdf.sh. Anything that starts with
 # "TODO" renders as a highlighted placeholder, so it's obvious on the page until filled in.
 
-# Short intro under the name. Drawn from cv/cv.tex and the experience entries below.
+# Short intro under the name.
 intro = """
 I'm a software engineer who enjoys working across the stack, with a focus on backend systems and
-optimisation problems. I'm currently at Aalyria, working on Spacetime, a platform that manages and
-optimises communications networks spanning land, sea, air and space.
+optimisation problems. I'm currently at Aalyria, working on the solver behind Spacetime, a platform
+that manages and optimises communications networks spanning land, sea, air and space.
 """
 
 # ---------------------------------------------------------------------------------------------
@@ -37,8 +37,6 @@ highlights = [
 role = 'Senior Software Engineer'
 company = 'Crypto Quantique'
 location = 'London'
-# TODO: confirm dates/title. cv.tex says "Senior Software Engineer, Jun 2022 – Apr 2025"; the
-# 2024 CV page said "Software Engineer Jun 2022 – May 2023, then Senior from May 2023".
 dates = 'Jun 2022 – Apr 2025'
 summary = 'Developed a distributed universal IoT platform focused on secure onboarding and device management.'
 highlights = [
@@ -85,7 +83,7 @@ dates = 'Sep 2019 – Dec 2019'
 summary = 'Supported first-year undergraduate labs: supervised workshops on circuit design, construction and experiment tracking, and gave students feedback and troubleshooting help.'
 
 # ---------------------------------------------------------------------------------------------
-# Skills (from "Technical Skills" in cv/cv.tex)
+# Skills
 # ---------------------------------------------------------------------------------------------
 
 [[skills]]
@@ -109,7 +107,7 @@ group = 'Spoken'
 items = ['English (native)', 'Arabic (fluent)']
 
 # ---------------------------------------------------------------------------------------------
-# Selected projects (from the old /projects page; repos verified on github.com/kenanjasim)
+# Selected projects
 # Set hidden = true to keep an entry here without showing it.
 # ---------------------------------------------------------------------------------------------
 
@@ -117,25 +115,23 @@ items = ['English (native)', 'Arabic (fluent)']
 name = 'Geranium'
 url = 'https://github.com/kenanjasim/geranium'
 description = 'An automated, visualised virtual network for generating network data, used to train a decision-tree intrusion detection model.'
-outcome = 'TODO: outcome (e.g. was this your dissertation? model accuracy? link to the paper, since the old files/geranium.pdf was never committed)'
+report = 'https://github.com/kenanjasim/geranium/blob/master/report.pdf'
 
 [[projects]]
 name = 'vngen'
 url = 'https://github.com/kenanjasim/vngen'
 description = 'Automated virtual network generation in Go, using QEMU virtualisation with KVM hardware acceleration.'
-outcome = 'TODO: outcome / what it enabled'
 
 [[projects]]
 name = 'Network Scanner'
 url = 'https://github.com/kenanjasim/network-scanner'
 description = 'Python implementations of ARP, ping and connect scanning to detect hosts and open ports, plus OS detection techniques.'
-outcome = 'TODO: outcome / what it enabled'
+hidden = true
 
 [[projects]]
 name = 'Glucose Helper'
 url = 'https://github.com/kenanjasim/GlucoseHelper'
 description = 'An Android app to help people with diabetes monitor their blood sugar and keep control of their own data. My first programming project.'
-outcome = 'TODO: outcome (optional)'
 
 [[projects]]
 name = 'AVN'
@@ -174,8 +170,7 @@ url = '/cka-certificate.pdf'
 role = 'Evening Kitchen Volunteer'
 place = 'Sufra'
 url = 'https://www.sufra-nwlondon.org.uk'
-dates = 'TODO: start month/year – Present'
-summary = 'TODO: one line on what you do at the evening kitchen'
+dates = 'Aug 2026 – Present'
 
 [[volunteering]]
 role = 'Refugee Casework Volunteer'

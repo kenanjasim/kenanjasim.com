@@ -1,5 +1,11 @@
 {{/* Project override: intro + CV download under the name/avatar block. */}}
 {{ with hugo.Data.cv }}
+<p class="cv-print-contact">
+  <a href="mailto:me@kenan.sh">me@kenan.sh</a> ·
+  <a href="https://kenanjasim.com/">kenanjasim.com</a> ·
+  <a href="https://github.com/kenanjasim">github.com/kenanjasim</a> ·
+  <a href="https://www.linkedin.com/in/kenanjasim/">linkedin.com/in/kenanjasim</a>
+</p>
 <div class="cv-intro">
   <p>{{ partial "cv/text.html" .intro }}</p>
   <p class="cv-actions">

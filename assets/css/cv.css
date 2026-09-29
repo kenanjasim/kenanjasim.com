@@ -133,7 +133,56 @@ html { scroll-behavior: smooth; }
   .cv-skills dd { margin-bottom: 1rem; }
 }
 
+/* Contact line that only appears in the printed / PDF CV */
+.cv-print-contact { display: none; }
+
+/* Print / PDF CV (scripts/build-cv-pdf.sh prints the home page with headless Chrome) */
+@page { size: A4; margin: 14mm 16mm; }
 @media print {
-  .navigation, .footer, .cv-actions, .float-container { display: none !important; }
-  .cv-section { break-inside: avoid-page; }
+  html { font-size: 50%; }
+  body, body.colorscheme-dark, body.colorscheme-auto {
+    background: #fff !important;
+    color: #212121 !important;
+    --cv-muted: #555;
+    --cv-rule: #ccc;
+    --cv-accent: #1565c0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.45rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+  a { color: inherit !important; text-decoration: none !important; }
+  ul { margin: 0.4rem 0 0; padding-left: 2rem; }
+  li { margin-bottom: 0.2rem; }
+  h1, h2, h3 { line-height: 1.2; }
+  .cv-meta { font-size: 1.35rem; }
+  .cv-skills { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 2rem; }
+  .cv-skills dt { font-weight: 700; }
+  .cv-skills dd { margin: 0; }
+  .cv-entry header { display: flex; justify-content: space-between; align-items: baseline; gap: 1.6rem; }
+  .navigation, .footer, .float-container, .cv-actions, .avatar, .about ul,
+  #contact, .cv-more, .todo { display: none !important; }
+
+  .content { margin: 0 !important; }
+  .content > section.centered {
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  .about { text-align: left; }
+  .about h1 { margin: 0; font-size: 3.6rem; }
+  .about h2 { margin: 0.4rem 0 0; font-size: 1.9rem; }
+  .cv-print-contact { display: block; margin: 0.8rem 0 0; font-size: 1.5rem; }
+  .cv-intro { max-width: none; margin: 1.2rem 0 0; }
+  .cv-intro p { text-align: left; margin: 0; }
+
+  .cv { max-width: none; padding: 0; }
+  .cv-section { margin-top: 1.6rem; padding-top: 1.2rem; }
+  .cv-section > h2 { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .cv-entry { margin-bottom: 1.2rem; break-inside: avoid; }
+  .cv-entry h3 { font-size: 1.7rem; }
+  .cv-section > h2 { break-after: avoid; }
 }

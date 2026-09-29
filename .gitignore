@@ -3,5 +3,5 @@
 public/
 resources/_gen/
 
-# Built from cv/cv.tex in CI; copy a local build here to preview the download link
+# Printed from the home page in CI; run scripts/build-cv-pdf.sh to generate it locally
 static/cv.pdf

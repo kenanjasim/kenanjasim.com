@@ -1,0 +1,22 @@
+{{/* Project override: same as the theme, but media="all" so cv.css print styles apply to the PDF CV. */}}
+ {{ range .Site.Params.customCSS }}
+  {{ if hugo.IsServer }}
+    {{ $styles := resources.Get . }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="all">
+  {{ else }}
+    {{ $styles := resources.Get . | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="all" />
+  {{ end }}
+{{ end }}
+
+{{ range .Site.Params.customSCSS }}
+  {{/* We don't change the targetPath to because it's transparent to users */}}
+  {{ if hugo.IsServer }}
+    {{ $cssOpts := (dict "enableSourceMap" true ) }}
+    {{ $styles := resources.Get . | toCSS $cssOpts }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="all">
+  {{ else }}
+    {{ $styles := resources.Get . | toCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="all" />
+  {{ end }}
+{{ end }}
