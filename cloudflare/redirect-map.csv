@@ -1,0 +1,47 @@
+old_url,new_url,status,type,handled_by
+https://kenanjasim.com/about/,https://kenan.sh/about/,301,page,redirect-rule
+https://kenanjasim.com/index.xml,https://kenan.sh/index.xml,301,rss,redirect-rule
+https://kenanjasim.com/now/,https://kenan.sh/now/,301,page,redirect-rule
+https://kenanjasim.com/page/1/,https://kenan.sh/page/1/,301,pagination-alias,redirect-rule
+https://kenanjasim.com/posts/,https://kenan.sh/posts/,301,section,redirect-rule
+https://kenanjasim.com/posts/cka-notes/,https://kenan.sh/posts/cka-notes/,301,post,redirect-rule
+https://kenanjasim.com/posts/go-concurrency/,https://kenan.sh/posts/go-concurrency/,301,post,redirect-rule
+https://kenanjasim.com/posts/go-package-layout/,https://kenan.sh/posts/go-package-layout/,301,post,redirect-rule
+https://kenanjasim.com/posts/idiomatic-go-solid-design/,https://kenan.sh/posts/idiomatic-go-solid-design/,301,post,redirect-rule
+https://kenanjasim.com/posts/named-returns-golang/,https://kenan.sh/posts/named-returns-golang/,301,post,redirect-rule
+https://kenanjasim.com/posts/ntn-conditional-handover/,https://kenan.sh/posts/ntn-conditional-handover/,301,post,redirect-rule
+https://kenanjasim.com/posts/page/1/,https://kenan.sh/posts/page/1/,301,pagination-alias,redirect-rule
+https://kenanjasim.com/posts/post-quantum-crypto-tls/,https://kenan.sh/posts/post-quantum-crypto-tls/,301,post,redirect-rule
+https://kenanjasim.com/posts/senior-developer/,https://kenan.sh/posts/senior-developer/,301,post,redirect-rule
+https://kenanjasim.com/tags/,https://kenan.sh/tags/,301,tag,redirect-rule
+https://kenanjasim.com/tags/3gpp/,https://kenan.sh/tags/3gpp/,301,tag,redirect-rule
+https://kenanjasim.com/tags/3gpp/page/1/,https://kenan.sh/tags/3gpp/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/concurrency/,https://kenan.sh/tags/concurrency/,301,tag,redirect-rule
+https://kenanjasim.com/tags/concurrency/page/1/,https://kenan.sh/tags/concurrency/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/cryptography/,https://kenan.sh/tags/cryptography/,301,tag,redirect-rule
+https://kenanjasim.com/tags/cryptography/page/1/,https://kenan.sh/tags/cryptography/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/discussion/,https://kenan.sh/tags/discussion/,301,tag,redirect-rule
+https://kenanjasim.com/tags/discussion/page/1/,https://kenan.sh/tags/discussion/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/golang/,https://kenan.sh/tags/golang/,301,tag,redirect-rule
+https://kenanjasim.com/tags/golang/page/1/,https://kenan.sh/tags/golang/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/kubernetes/,https://kenan.sh/tags/kubernetes/,301,tag,redirect-rule
+https://kenanjasim.com/tags/kubernetes/page/1/,https://kenan.sh/tags/kubernetes/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/networking/,https://kenan.sh/tags/networking/,301,tag,redirect-rule
+https://kenanjasim.com/tags/networking/page/1/,https://kenan.sh/tags/networking/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/notes/,https://kenan.sh/tags/notes/,301,tag,redirect-rule
+https://kenanjasim.com/tags/notes/page/1/,https://kenan.sh/tags/notes/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/ntn/,https://kenan.sh/tags/ntn/,301,tag,redirect-rule
+https://kenanjasim.com/tags/ntn/page/1/,https://kenan.sh/tags/ntn/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/page/1/,https://kenan.sh/tags/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/security/,https://kenan.sh/tags/security/,301,tag,redirect-rule
+https://kenanjasim.com/tags/security/page/1/,https://kenan.sh/tags/security/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/tags/software-engineering/,https://kenan.sh/tags/software-engineering/,301,tag,redirect-rule
+https://kenanjasim.com/tags/software-engineering/page/1/,https://kenan.sh/tags/software-engineering/page/1/,301,tag-pagination-alias,redirect-rule
+https://kenanjasim.com/travel/,https://kenan.sh/travel/,301,page,redirect-rule
+https://kenanjasim.com/uses/,https://kenan.sh/uses/,301,page,redirect-rule
+https://kenanjasim.com/cv/,https://kenanjasim.com/,301,old CV page (removed Nov 2024),bulk-redirect
+https://kenanjasim.com/projects/,https://kenanjasim.com/#projects,301,old projects page (removed Nov 2024),bulk-redirect
+https://kenanjasim.com/education/,https://kenanjasim.com/#education,301,old education page (removed Nov 2024),bulk-redirect
+https://kenanjasim.com/search/,https://kenan.sh/posts/,301,old search page (removed),bulk-redirect
+https://kenanjasim.com/categories/,https://kenan.sh/tags/,301,old default categories taxonomy,bulk-redirect
+https://kenanjasim.com/profile.svg,https://kenan.sh/profile.svg,301,static file only kept on kenan.sh,bulk-redirect
