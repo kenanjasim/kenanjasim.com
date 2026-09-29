@@ -1,17 +1,26 @@
-{{/* Project override: intro + CV download under the name/avatar block. */}}
-{{ with hugo.Data.cv }}
+{{/* Project override: print-only contact line, intro and actions (CV download + social links). */}}
 <p class="cv-print-contact">
   <a href="mailto:me@kenan.sh">me@kenan.sh</a> ·
   <a href="https://kenanjasim.com/">kenanjasim.com</a> ·
   <a href="https://github.com/kenanjasim">github.com/kenanjasim</a> ·
   <a href="https://www.linkedin.com/in/kenanjasim/">linkedin.com/in/kenanjasim</a>
 </p>
-<div class="cv-intro">
-  <p>{{ partial "cv/text.html" .intro }}</p>
-  <p class="cv-actions">
-    <a class="cv-button" href="{{ "cv.pdf" | relURL }}">
-      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download CV (PDF)
-    </a>
-  </p>
-</div>
+{{ with hugo.Data.cv }}
+<p class="hero-intro">{{ partial "cv/text.html" .intro }}</p>
 {{ end }}
+<div class="hero-actions">
+  <a class="cv-button" href="{{ "cv.pdf" | relURL }}">
+    <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download CV
+  </a>
+  {{ with site.Params.social }}
+  <ul class="hero-social">
+    {{ range sort . "weight" }}
+    <li>
+      <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" title="{{ .name }}" {{ with .rel }}rel="{{ . }}"{{ end }}>
+        <i class="{{ .icon }} fa-fw" aria-hidden="true"></i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>

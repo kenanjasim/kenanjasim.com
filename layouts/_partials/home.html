@@ -1,0 +1,15 @@
+{{/* Project override: left-aligned hero (photo beside name, role, intro, actions), then the CV sections. */}}
+<section class="container hero">
+  {{ with site.Params.avatarURL }}
+  <img class="hero-avatar" src="{{ . | relURL }}" alt="{{ site.Params.author }}" width="144" height="144">
+  {{ end }}
+  <div class="hero-body">
+    <h1 class="hero-name">{{ site.Params.author }}</h1>
+    <p class="hero-role">
+      {{- range $i, $line := site.Params.info }}{{ if $i }}<span class="hero-sep" aria-hidden="true"> · </span>{{ end }}<span>{{ $line | markdownify }}</span>{{ end -}}
+    </p>
+    {{ partial "home/extensions.html" . }}
+  </div>
+</section>
+
+{{ partial "home/sections.html" . }}

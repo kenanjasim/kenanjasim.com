@@ -1,6 +1,37 @@
 /* One-page CV styling, layered on hugo-coder. 1rem = 10px (theme sets html { font-size: 62.5% }). */
 
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
 :root {
+  --cv-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --cv-width: 76rem;
   --cv-muted: #616161;
   --cv-rule: #e0e0e0;
   --cv-accent: #1565c0;
@@ -9,7 +40,7 @@
 }
 body.colorscheme-dark {
   --cv-muted: #a0a0a0;
-  --cv-rule: #424242;
+  --cv-rule: #3a3a3a;
   --cv-accent: #42a5f5;
   --cv-todo-bg: #4a3b00;
   --cv-todo-fg: #ffe08a;
@@ -17,7 +48,7 @@ body.colorscheme-dark {
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
     --cv-muted: #a0a0a0;
-    --cv-rule: #424242;
+    --cv-rule: #3a3a3a;
     --cv-accent: #42a5f5;
     --cv-todo-bg: #4a3b00;
     --cv-todo-fg: #ffe08a;
@@ -25,36 +56,77 @@ body.colorscheme-dark {
 }
 
 html { scroll-behavior: smooth; }
+body {
+  font-family: var(--cv-font);
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+.navigation-title { font-family: var(--cv-font); font-weight: 600; }
 
-/* Theme lays .content out as a flex row; stack the about block and CV sections instead */
+/* Theme lays .content out as a flex row; stack the hero and CV sections instead */
 .content { flex-direction: column; }
 .content .cv p,
-.content .cv article p {
+.content .cv article p,
+.hero p {
   text-align: left;
   hyphens: manual;
   -webkit-hyphens: manual;
 }
 .content .cv-entry header { margin: 0; }
-.cv-section { scroll-margin-top: 1.6rem; }
 
-/* Intro under the avatar/name block */
-.cv-intro {
-  max-width: 56rem;
-  margin: 0 0 0 4.8rem;
+/* Hero and sections share one column so their left edges line up */
+.hero,
+.cv { max-width: var(--cv-width); }
+
+/* ---------------------------------------------------------------------------------------------
+   Hero
+   --------------------------------------------------------------------------------------------- */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.6rem;
+  margin-top: 4.8rem;
 }
-.cv-intro p { text-align: left; }
-@media only screen and (max-width: 768px) {
-  .content > section.centered { flex-direction: column; }
-  .cv-intro { margin: 2.4rem auto 0; }
-  .cv-intro p { text-align: center; }
+.hero-avatar {
+  flex: none;
+  width: 14.4rem;
+  height: 14.4rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.cv-actions { margin-top: 2rem; }
-.cv-button {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  border: 2px solid var(--cv-accent);
-  border-radius: 0.6rem;
+.hero-body { min-width: 0; }
+.hero-name {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1.1;
   font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.hero-role {
+  margin: 0.6rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--cv-muted);
+}
+.hero-role p { display: inline; margin: 0; }
+.hero-intro { margin: 1.6rem 0 0; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem 2rem;
+  margin-top: 2rem;
+}
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.6rem;
+  border: 1.5px solid var(--cv-accent);
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
   text-decoration: none;
 }
 .cv-button:hover,
@@ -63,17 +135,41 @@ html { scroll-behavior: smooth; }
   color: #fff;
   text-decoration: none;
 }
+.hero-social {
+  display: flex;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+.hero .hero-social a { color: var(--cv-muted); }
+.hero .hero-social a:hover,
+.hero .hero-social a:focus-visible { color: var(--cv-accent); }
 
-/* Sections */
-.cv { max-width: 80rem; }
+@media only screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.4rem;
+  }
+  .hero-avatar { width: 11.2rem; height: 11.2rem; }
+  .hero-name { font-size: 3.4rem; }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Sections
+   --------------------------------------------------------------------------------------------- */
 .cv-section {
   padding-top: 3.2rem;
   margin-top: 3.2rem;
   border-top: 1px solid var(--cv-rule);
+  scroll-margin-top: 1.6rem;
 }
 .cv-section > h2 {
   margin: 0 0 1.6rem;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 .cv-entry { margin-bottom: 2.4rem; }
 .cv-entry header {
@@ -86,6 +182,7 @@ html { scroll-behavior: smooth; }
 .cv-entry h3 {
   margin: 0;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 .cv-entry p,
 .cv-entry ul { margin: 0.6rem 0 0; }
@@ -105,7 +202,7 @@ html { scroll-behavior: smooth; }
   gap: 0.6rem 2.4rem;
   margin: 0;
 }
-.cv-skills dt { font-weight: 700; }
+.cv-skills dt { font-weight: 600; }
 .cv-skills dd { margin: 0; }
 
 .cv-contact {
@@ -133,10 +230,12 @@ html { scroll-behavior: smooth; }
   .cv-skills dd { margin-bottom: 1rem; }
 }
 
-/* Contact line that only appears in the printed / PDF CV */
+/* ---------------------------------------------------------------------------------------------
+   Print / PDF CV (scripts/build-cv-pdf.sh prints the home page with headless Chrome).
+   The theme's own stylesheets are screen-only, so these rules stand on their own.
+   --------------------------------------------------------------------------------------------- */
 .cv-print-contact { display: none; }
 
-/* Print / PDF CV (scripts/build-cv-pdf.sh prints the home page with headless Chrome) */
 @page { size: A4; margin: 14mm 16mm; }
 @media print {
   html { font-size: 50%; }
@@ -148,7 +247,6 @@ html { scroll-behavior: smooth; }
     --cv-accent: #1565c0;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1.45rem;
     line-height: 1.45;
     margin: 0;
@@ -157,32 +255,23 @@ html { scroll-behavior: smooth; }
   ul { margin: 0.4rem 0 0; padding-left: 2rem; }
   li { margin-bottom: 0.2rem; }
   h1, h2, h3 { line-height: 1.2; }
-  .cv-meta { font-size: 1.35rem; }
-  .cv-skills { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 2rem; }
-  .cv-skills dt { font-weight: 700; }
-  .cv-skills dd { margin: 0; }
-  .cv-entry header { display: flex; justify-content: space-between; align-items: baseline; gap: 1.6rem; }
-  .navigation, .footer, .float-container, .cv-actions, .avatar, .about ul,
+
+  .navigation, .footer, .float-container, .hero-avatar, .hero-actions,
   #contact, .cv-more, .todo { display: none !important; }
 
   .content { margin: 0 !important; }
-  .content > section.centered {
-    display: block;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-  }
-  .about { text-align: left; }
-  .about h1 { margin: 0; font-size: 3.6rem; }
-  .about h2 { margin: 0.4rem 0 0; font-size: 1.9rem; }
-  .cv-print-contact { display: block; margin: 0.8rem 0 0; font-size: 1.5rem; }
-  .cv-intro { max-width: none; margin: 1.2rem 0 0; }
-  .cv-intro p { text-align: left; margin: 0; }
+  .hero, .cv { display: block; max-width: none; margin: 0; padding: 0; }
+  .hero-name { font-size: 3.4rem; }
+  .hero-role { font-size: 1.8rem; color: #212121; }
+  .cv-print-contact { display: block; margin: 0.8rem 0 0; font-size: 1.45rem; }
+  .hero-intro { margin: 1.2rem 0 0; }
 
-  .cv { max-width: none; padding: 0; }
   .cv-section { margin-top: 1.6rem; padding-top: 1.2rem; }
-  .cv-section > h2 { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .cv-section > h2 { font-size: 2.1rem; margin-bottom: 0.8rem; break-after: avoid; }
   .cv-entry { margin-bottom: 1.2rem; break-inside: avoid; }
-  .cv-entry h3 { font-size: 1.7rem; }
-  .cv-section > h2 { break-after: avoid; }
+  .cv-entry h3 { font-size: 1.65rem; }
+  .cv-entry header { display: flex; justify-content: space-between; align-items: baseline; gap: 1.6rem; }
+  .cv-meta { font-size: 1.35rem; }
+  .cv-skills { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 2rem; }
+  .cv-skills dd { margin: 0; }
 }

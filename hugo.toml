@@ -30,20 +30,20 @@ manifest = '/site.webmanifest'
 
 [[params.social]]
 name = 'Email'
-icon = 'fa-solid fa-envelope fa-2x'
+icon = 'fa-solid fa-envelope'
 weight = 1
 url = 'mailto:me@kenan.sh'
 
 [[params.social]]
 name = 'GitHub'
-icon = 'fa-brands fa-github fa-2x'
+icon = 'fa-brands fa-github'
 weight = 2
 url = 'https://github.com/kenanjasim'
 rel = 'me'
 
 [[params.social]]
 name = 'LinkedIn'
-icon = 'fa-brands fa-linkedin fa-2x'
+icon = 'fa-brands fa-linkedin'
 weight = 3
 url = 'https://www.linkedin.com/in/kenanjasim/'
 rel = 'me'
