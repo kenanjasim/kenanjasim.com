@@ -4,11 +4,13 @@
 
 # Short intro under the name. Drawn from cv/cv.tex and the experience entries below.
 intro = """
-Software engineer specialising in distributed systems, cloud infrastructure and backend platforms.
-Experienced in leading backend development, building Kubernetes deployment pipelines on AWS, and
-delivering order-of-magnitude API performance improvements. First-class BEng in Electronic and
-Information Engineering from King's College London. Currently at Aalyria, working on Spacetime, a
-platform that manages and optimises communications networks spanning land, sea, air and space.
+I'm a software engineer who enjoys working across the stack, with a focus on backend systems and
+optimisation problems. At Aalyria I work on Spacetime, a platform that manages and optimises
+communications networks spanning land, sea, air and space. Previously, I developed a distributed
+platform for the formal verification of machine learning models at Safe Intelligence, and led
+backend development of a secure IoT device-management platform at Crypto Quantique, where I
+rewrote the API to make it 10–30× faster. I hold a First-class BEng in Electronic and Information
+Engineering from King's College London.
 """
 
 # ---------------------------------------------------------------------------------------------

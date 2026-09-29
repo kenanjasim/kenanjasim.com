@@ -11,7 +11,7 @@ unsafe = true
 
 [params]
 author = 'Kenan Jasim'
-description = 'Kenan Jasim — software engineer in London. Distributed cloud computing, infrastructure and IoT platforms.'
+description = 'Kenan Jasim — software engineer in London, focused on backend systems and optimisation problems.'
 keywords = 'Kenan Jasim,software engineer,Go,Kubernetes,distributed systems,London'
 # TODO(kenan): confirm you're happy with this photo on a professional site, or swap in a headshot
 avatarURL = 'images/avatar.jpg'
