@@ -173,6 +173,13 @@ url = '/cka-certificate.pdf'
 # ---------------------------------------------------------------------------------------------
 
 [[volunteering]]
+role = 'Evening Kitchen Volunteer'
+place = 'Sufra'
+url = 'https://www.sufra-nwlondon.org.uk'
+dates = 'TODO: start month/year – Present'
+summary = 'TODO: one line on what you do at the evening kitchen'
+
+[[volunteering]]
 role = 'Refugee Casework Volunteer'
 place = 'British Red Cross'
 dates = 'Jan 2019 – Jan 2021'

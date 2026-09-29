@@ -63,10 +63,10 @@
     {{ range . }}
     <article class="cv-entry">
       <header>
-        <h3>{{ .role }} · {{ .place }}</h3>
-        <p class="cv-meta">{{ .dates }}</p>
+        <h3>{{ .role }} · {{ with .url }}<a href="{{ . }}" rel="noopener">{{ end }}{{ .place }}{{ if .url }}</a>{{ end }}</h3>
+        {{ with partial "cv/text.html" .dates }}<p class="cv-meta">{{ . }}</p>{{ end }}
       </header>
-      <p>{{ partial "cv/text.html" .summary }}</p>
+      {{ with partial "cv/text.html" .summary }}<p>{{ . }}</p>{{ end }}
     </article>
     {{ end }}
   </section>
