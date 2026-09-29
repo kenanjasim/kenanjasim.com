@@ -5,7 +5,8 @@
 # Short intro under the name.
 intro = """
 I'm a software engineer who enjoys working across the stack, with a focus on backend systems and
-optimisation problems.
+optimisation problems. I'm currently at Aalyria, working on Spacetime, a platform that manages and
+optimises communications networks spanning land, sea, air and space.
 """
 
 # ---------------------------------------------------------------------------------------------
