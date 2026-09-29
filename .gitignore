@@ -1,0 +1,7 @@
+.hugo_build.lock
+**/.DS_Store
+public/
+resources/_gen/
+
+# Built from cv/cv.tex in CI; copy a local build here to preview the download link
+static/cv.pdf
