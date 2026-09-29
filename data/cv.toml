@@ -2,12 +2,13 @@
 # Everything here comes from cv/cv.tex or the old projects page. Anything that starts with
 # "TODO" renders as a highlighted placeholder, so it's obvious on the page until filled in.
 
-# Short intro under the name. Drawn from the PROFILE section of cv/cv.tex.
+# Short intro under the name. Drawn from cv/cv.tex and the experience entries below.
 intro = """
-Software engineer with a background in electronic engineering (First-class BEng, King's College
-London), specialising in distributed cloud computing, infrastructure tooling and IoT platforms.
-Currently at Aalyria, building Spacetime, a platform that manages communications networks
-spanning land, sea, air and space.
+Software engineer specialising in distributed systems, cloud infrastructure and backend platforms.
+Experienced in leading backend development, building Kubernetes deployment pipelines on AWS, and
+delivering order-of-magnitude API performance improvements. First-class BEng in Electronic and
+Information Engineering from King's College London. Currently at Aalyria, working on Spacetime, a
+platform that manages and optimises communications networks spanning land, sea, air and space.
 """
 
 # ---------------------------------------------------------------------------------------------
@@ -21,18 +22,17 @@ url = 'https://aalyria.com'
 location = 'London'
 dates = 'Jan 2026 – Present'
 summary = "Developing Spacetime, a platform to manage and optimise complex, highly dynamic communications networks that span land, sea, air and space. Aalyria was spun out of Google's Loom project."
-highlights = [
-  'TODO: 1–3 concrete highlights from your time at Aalyria (what you built, and its impact)',
-]
 
 [[experience]]
 role = 'Senior Software Engineer'
 company = 'Safe Intelligence'
 location = 'London'
 dates = 'Apr 2025 – Dec 2025'
-summary = 'Developed a platform focused on formal verification of machine learning models, with applications in finance and object detection.'
+summary = 'Developed a large distributed platform for the formal verification of machine learning models, with applications in finance and object detection.'
 highlights = [
-  'TODO: 1–3 concrete highlights from Safe Intelligence (what you built, and its impact)',
+  'Built the full DevOps pipeline to deploy the platform, using Tilt, Docker, Kubernetes and Terraform on AWS.',
+  'Extended the verification platform to support images, adding verification of image classification models.',
+  'Took on leadership across the team: connecting people, leading meetings and scheduling design sessions.',
 ]
 
 [[experience]]
@@ -45,12 +45,12 @@ dates = 'Jun 2022 – Apr 2025'
 summary = 'Developed a distributed universal IoT platform focused on secure onboarding and device management.'
 highlights = [
   'Lead backend engineer on a distributed system across Python (Django) and Go, with MongoDB, deployed on AWS and Azure.',
+  'Rewrote and optimised the platform API, making it 10–30× faster.',
   'Led the design, planning and implementation of new services, including writing the features and user stories for them.',
   'Improved the maintainability, performance and reliability of legacy codebases; led code-quality initiatives such as onboarding projects into SonarQube.',
   'Designed and implemented functionality involving Embedded Linux, TPMs, MQTT, FOTA updates, HSMs and highly threaded virtual devices.',
   'Worked across teams to push for better infrastructure, cleaner architecture, and better coding practices and standards.',
   'Onboarded, trained and mentored members of the team.',
-  'TODO: add a measurable outcome if you have one (scale, reliability, performance, adoption)',
 ]
 
 [[experience]]
