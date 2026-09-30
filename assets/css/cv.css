@@ -34,22 +34,25 @@
   --cv-width: 76rem;
   --cv-muted: #616161;
   --cv-rule: #e0e0e0;
-  --cv-accent: #1565c0;
+  --cv-accent: #157a60;
+  --cv-on-accent: #ffffff;
   --cv-todo-bg: #fff3cd;
   --cv-todo-fg: #7a5b00;
 }
 body.colorscheme-dark {
   --cv-muted: #a0a0a0;
-  --cv-rule: #3a3a3a;
-  --cv-accent: #42a5f5;
+  --cv-rule: #2a2a2a;
+  --cv-accent: #4fc1a0;
+  --cv-on-accent: #0e0e0e;
   --cv-todo-bg: #4a3b00;
   --cv-todo-fg: #ffe08a;
 }
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
     --cv-muted: #a0a0a0;
-    --cv-rule: #3a3a3a;
-    --cv-accent: #42a5f5;
+    --cv-rule: #2a2a2a;
+    --cv-accent: #4fc1a0;
+    --cv-on-accent: #0e0e0e;
     --cv-todo-bg: #4a3b00;
     --cv-todo-fg: #ffe08a;
   }
@@ -132,7 +135,7 @@ body {
 .cv-button:hover,
 .cv-button:focus-visible {
   background: var(--cv-accent);
-  color: #fff;
+  color: var(--cv-on-accent);
   text-decoration: none;
 }
 .hero-social {
@@ -251,7 +254,7 @@ body {
     color: #212121 !important;
     --cv-muted: #555;
     --cv-rule: #ccc;
-    --cv-accent: #1565c0;
+    --cv-accent: #157a60;
   }
   body {
     font-size: 1.45rem;
