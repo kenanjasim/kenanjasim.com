@@ -85,9 +85,12 @@ body {
    Hero
    --------------------------------------------------------------------------------------------- */
 .hero {
+  /* Centred header card: photo, name, role, intro and actions stacked down the middle */
   display: flex;
-  align-items: flex-start;
-  gap: 3.6rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.4rem;
   margin-top: 8rem;
 }
 .hero-avatar {
@@ -97,7 +100,12 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
-.hero-body { min-width: 0; }
+.hero-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .hero-name {
   margin: 0;
   font-size: 4rem;
@@ -112,13 +120,15 @@ body {
   color: var(--cv-muted);
 }
 .hero-role p { display: inline; margin: 0; }
-.hero-intro { margin: 1.6rem 0 0; }
+.hero-intro { margin: 1.6rem 0 0; max-width: 58rem; }
+.hero p { text-align: center; }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1.2rem 2rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 .cv-button {
   display: inline-flex;
@@ -159,11 +169,13 @@ body {
 
 @media only screen and (max-width: 768px) {
   .hero {
-    flex-direction: column;
     gap: 2rem;
     margin-top: 4rem;
   }
   .hero-avatar { width: 11.2rem; height: 11.2rem; }
+  /* role and location on their own lines rather than wrapping mid-phrase */
+  .hero-role .hero-sep { display: none; }
+  .hero-role > span { display: block; }
   .hero-name { font-size: 3.4rem; }
 }
 
@@ -271,10 +283,11 @@ body {
 
   .content { margin: 0 !important; }
   .hero, .cv { display: block; max-width: none; margin: 0; padding: 0; }
+  .hero, .hero p, .hero-body { text-align: left !important; display: block; }
   .hero-name { font-size: 3.4rem; }
   .hero-role { font-size: 1.8rem; color: #212121; }
   .cv-print-contact { display: block; margin: 0.8rem 0 0; font-size: 1.45rem; }
-  .hero-intro { margin: 1.2rem 0 0; }
+  .hero-intro { margin: 1.2rem 0 0; max-width: none; }
 
   .cv-section { margin-top: 1.6rem; padding-top: 1.2rem; }
   .cv-section > h2 { font-size: 2.1rem; margin-bottom: 0.8rem; break-after: avoid; }
